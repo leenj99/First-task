@@ -1,6 +1,6 @@
 UI (User Interface):
 
--Refers to the visual and interactive elements of the application (the "look and feel").
+-Refers to the visual and interactive elements of the application (the look and feel).
 
 -Includes colors, typography, buttons, icons, and modern card components (such as the Shadcn/ui-inspired card designs implemented in this project).
 
