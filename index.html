@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>User Directory Application</title>
   <link rel="icon" href="logo.png" type="image/png">
-  <link href="./dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="./dist/output.css">
   <style>
     * {
       box-sizing: border-box;
@@ -40,7 +40,8 @@
     header h1 {
       font-size: 24px;
       background: linear-gradient(90deg, #4f46e5, #7c3aed);
-      
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin: 0;
       font-weight: 700;
     }
@@ -232,10 +233,12 @@
 
     <section>
       <h2>Users List</h2>
+      <!-- الحاوية المطلوبة لتستقبل الكروت البرمجية من app.js -->
       <div id="users-list" class="cards-container"></div>
     </section>
   </main>
-
+  
+  <script type="module" src="./api.js"></script>
   <script type="module" src="./app.js"></script>
 </body>
 </html>

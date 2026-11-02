@@ -1,5 +1,6 @@
-/**
+import { fetchUsers } from './api.js';
 
+/**
  * @param {Users} user 
  * @returns {string}
  */
@@ -30,3 +31,24 @@ function createUserCard(user) {
     </div>
     `;
 }
+
+
+async function renderUsers() {
+    const container = document.getElementById('users-list');
+    if (!container) return;
+
+    try {
+        const users = await fetchUsers();
+        if (users && users.length > 0) {
+            container.innerHTML = users.map(user => createUserCard(user)).join('');
+        } else {
+            container.innerHTML = '<p class="text-slate-500 col-span-full text-center">No users found.</p>';
+        }
+    } catch (error) {
+        console.error('Error rendering users:', error);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    renderUsers();
+});
